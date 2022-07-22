@@ -18,10 +18,10 @@
 					<div class="card-body p-0">
 						<!-- Nested Row within Card Body -->
 						<div class="row">
-							<div class="col-lg-6">
-														
+							<div class="col-lg-6">								
+								<img src="<?php echo base_url('assets/img/kucing.png')?>" alt="" height="475px" width="450px">					
 							</div>
-							<div class="col-lg-6" style="">
+							<div class="col-lg-6 align-self-center">								
 								<div class="p-5">
 									<div class="text-center">
 										<h1 class="h4 text-gray-900 mb-4">Welcome!</h1>
@@ -42,18 +42,18 @@
 												<label class="custom-control-label" for="customCheck">Remember
 													Me</label>
 											</div>
-										</div>
+										</div>										
 										<a href="<?php echo base_url('Dashboard')?>" class="btn btn-primary btn-user btn-block">
 											Login
-										</a>										
-									</form>
-									<hr>
-									<div class="text-center">
-										<a class="small" href="forgot-password.html">Forgot Password?</a>
-									</div>
-									<div class="text-center">
-										<a class="small" href="register.html">Create an Account!</a>
-									</div>
+										</a>
+										<a href="<?php echo base_url('Register')?>" class="btn btn-outline-primary btn-user btn-block">
+											Register
+                                		</a>
+										<hr>
+										<div class="text-center">
+                                			<a class="small" href="forgot-password.html">Forgot Password?</a>
+                            			</div>							
+									</form>									
 								</div>
 							</div>
 						</div>
