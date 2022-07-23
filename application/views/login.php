@@ -26,29 +26,33 @@
 									<div class="text-center">
 										<h1 class="h4 text-gray-900 mb-4">Welcome!</h1>
 									</div>
-									<form class="user">
+									<?php 
+									if($this->session->flashdata('error') !='')
+									{
+										echo '<div class="alert alert-danger" role="alert">';
+										echo $this->session->flashdata('error');
+										echo '</div>';
+									}
+									?>
+									<?php 
+									if($this->session->flashdata('success_register') !='')
+									{
+										echo '<div class="alert alert-info" role="alert">';
+										echo $this->session->flashdata('success_register');
+										echo '</div>';
+									}
+									?>
+									<form class="user" action="<?= base_url('Login/proses')?>" method="POST">
 										<div class="form-group">
-											<input type="email" class="form-control form-control-user"
-												id="exampleInputEmail" aria-describedby="emailHelp"
-												placeholder="Enter Email Address...">
+											<input type="text" name="username" class="form-control form-control-user"												
+												placeholder="Enter Username">
 										</div>
 										<div class="form-group">
-											<input type="password" class="form-control form-control-user"
-												id="exampleInputPassword" placeholder="Password">
+											<input type="password" name="password" class="form-control form-control-user"
+												placeholder="Password">
 										</div>
-										<div class="form-group">
-											<div class="custom-control custom-checkbox small">
-												<input type="checkbox" class="custom-control-input" id="customCheck">
-												<label class="custom-control-label" for="customCheck">Remember
-													Me</label>
-											</div>
-										</div>										
-										<a href="<?php echo base_url('Dashboard')?>" class="btn btn-primary btn-user btn-block">
-											Login
-										</a>
-										<a href="<?php echo base_url('Register')?>" class="btn btn-outline-primary btn-user btn-block">
-											Register
-                                		</a>
+										<button type="submit" class="btn btn-primary btn-user btn-block">Login</button>																		
+										<button type="button" class="btn btn-outline-primary btn-user btn-block" onclick="gotoRegister()">Register</button>										
 										<hr>
 										<div class="text-center">
                                 			<a class="small" href="forgot-password.html">Forgot Password?</a>
@@ -67,5 +71,11 @@
 
 	<!---------- Javascript ---------->
 	<script src="<?php echo base_url('assets/js/sb-admin-2.min.js') ?>"></script>
+	<script>
+		function gotoRegister()
+		{
+			location.href="<?= base_url('Register')?>"
+		}
+	</script>
 </body>
 </html>
