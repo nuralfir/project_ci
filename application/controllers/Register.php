@@ -8,4 +8,15 @@ class Register extends CI_Controller {
 		$this->load->view('register');
 	}
 
+	public function proses_regist()
+	{
+		$data_input = $this->input->post();
+		echo json_encode($data_input);
+	}
+
+	public function insert_user_to_db($data_user)
+	{
+		
+	}
+
 }
